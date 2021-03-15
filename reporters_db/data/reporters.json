@@ -1343,6 +1343,9 @@
             "editions": {
                 "Bankr. L. Rep.": {
                     "end": null,
+                    "patterns": [
+                        "$paragraph_cite"
+                    ],
                     "start": "1750-01-01T00:00:00"
                 }
             },
@@ -3202,6 +3205,9 @@
             "editions": {
                 "Cont. Cas. Fed.": {
                     "end": null,
+                    "patterns": [
+                        "$volume $reporter $paragraph_marker_optional$page_with_commas"
+                    ],
                     "start": "1750-01-01T00:00:00"
                 }
             },
@@ -4177,6 +4183,9 @@
             "editions": {
                 "Empl. Prac. Dec. (CCH)": {
                     "end": null,
+                    "patterns": [
+                        "$volume $reporter $paragraph_marker_optional$page_with_commas"
+                    ],
                     "start": "1971-01-01T00:00:00"
                 }
             },
@@ -4593,6 +4602,9 @@
             "editions": {
                 "FED App.": {
                     "end": null,
+                    "patterns": [
+                        "$year_as_volume $reporter (?P<page>\\d{4}[nNpP]) \\(6th Cir\\.?\\)"
+                    ],
                     "start": "1750-01-01T00:00:00"
                 }
             },
@@ -4922,6 +4934,9 @@
             "editions": {
                 "Fed. Sec. L. Rep. (CCH)": {
                     "end": null,
+                    "patterns": [
+                        "$paragraph_cite_with_suffix"
+                    ],
                     "start": "1750-01-01T00:00:00"
                 }
             },
@@ -7312,11 +7327,14 @@
             "editions": {
                 "La.App. 1 Cir.": {
                     "end": null,
+                    "patterns": [
+                        "$louisiana"
+                    ],
                     "start": "1750-01-01T00:00:00"
                 }
             },
             "examples": [
-                "2009 1359R (La.App. 1 Cir. 05/10/10);"
+                "2009 1359R (La.App. 1 Cir. 05/10/10)"
             ],
             "mlz_jurisdiction": [
                 "us:la;supreme.court"
@@ -7324,7 +7342,7 @@
             "name": "Court of Appeal of Louisiana, First Circuit",
             "notes": "Occasionally the citation can have a letter at the end of the second string of numbers.",
             "regexes": [
-                "(?P<volume>\\d{2,4})( |-)(?P<page>\\d{2,5}) (?P<reporter>\\(La.App. 1 Cir.) (?P<date_filed>\\d{1,2}\\/\\d{1,2}\\/\\d{2,4})\\)"
+                "(?P<volume>\\d{2,4})( |-)(?P<page>\\d{2,5}[A-Z]?) \\((?P<reporter>La.App. 1 Cir.) (?P<date_filed>\\d{1,2}\\/\\d{1,2}\\/\\d{2,4})\\)"
             ],
             "variations": {}
         }
@@ -7335,6 +7353,9 @@
             "editions": {
                 "La.App. 2 Cir.": {
                     "end": null,
+                    "patterns": [
+                        "$louisiana"
+                    ],
                     "start": "1750-01-01T00:00:00"
                 }
             },
@@ -7354,6 +7375,9 @@
             "editions": {
                 "La.App. 3 Cir.": {
                     "end": null,
+                    "patterns": [
+                        "$louisiana"
+                    ],
                     "start": "1750-01-01T00:00:00"
                 }
             },
@@ -7373,6 +7397,9 @@
             "editions": {
                 "La.App. 4 Cir.": {
                     "end": null,
+                    "patterns": [
+                        "$louisiana"
+                    ],
                     "start": "1750-01-01T00:00:00"
                 }
             },
@@ -7392,6 +7419,9 @@
             "editions": {
                 "La.App. 5 Cir.": {
                     "end": null,
+                    "patterns": [
+                        "$louisiana"
+                    ],
                     "start": "1750-01-01T00:00:00"
                 }
             },
@@ -7411,6 +7441,9 @@
             "editions": {
                 "La.App. 6 Cir.": {
                     "end": null,
+                    "patterns": [
+                        "$louisiana"
+                    ],
                     "start": "1750-01-01T00:00:00"
                 }
             },
@@ -9800,6 +9833,9 @@
             "editions": {
                 "NMCA": {
                     "end": null,
+                    "patterns": [
+                        "$new_mexico"
+                    ],
                     "start": "1750-01-01T00:00:00"
                 }
             },
@@ -9823,6 +9859,9 @@
             "editions": {
                 "NMCERT": {
                     "end": null,
+                    "patterns": [
+                        "$new_mexico"
+                    ],
                     "start": "1750-01-01T00:00:00"
                 }
             },
@@ -9846,6 +9885,9 @@
             "editions": {
                 "NMSC": {
                     "end": null,
+                    "patterns": [
+                        "$new_mexico"
+                    ],
                     "start": "1750-01-01T00:00:00"
                 }
             },
@@ -10302,6 +10344,9 @@
             "editions": {
                 "Ohio": {
                     "end": null,
+                    "patterns": [
+                        "$format_neutral"
+                    ],
                     "start": "2002-01-01T00:00:00"
                 }
             },
@@ -12677,6 +12722,9 @@
             "editions": {
                 "Smith (N. H.)": {
                     "end": "1815-12-31T00:00:00",
+                    "patterns": [
+                        "$single_volume_reporter"
+                    ],
                     "start": "1796-01-01T00:00:00"
                 }
             },
@@ -13122,6 +13170,9 @@
             "editions": {
                 "T.C. Memo.": {
                     "end": null,
+                    "patterns": [
+                        "$reporter_year_page"
+                    ],
                     "start": "1942-01-01T00:00:00"
                 }
             },
@@ -13168,6 +13219,9 @@
             "editions": {
                 "T.C. Summary Opinion": {
                     "end": null,
+                    "patterns": [
+                        "$reporter_year_page"
+                    ],
                     "start": "1942-01-01T00:00:00"
                 }
             },
@@ -13211,9 +13265,18 @@
             "editions": {
                 "T.C.M. (RIA)": {
                     "end": null,
+                    "patterns": [
+                        "$reporter_year_page",
+                        "$paragraph_cite"
+                    ],
                     "start": "1924-01-01T00:00:00"
                 }
             },
+            "examples": [
+                "T.C.M. (RIA) ¶ 95,342",
+                "T.C.M. (RIA) 92736",
+                "T.C.M. (RIA) 2004-279"
+            ],
             "mlz_jurisdiction": [
                 "us:c;tax.court"
             ],
@@ -13699,6 +13762,9 @@
             "editions": {
                 "Trade Cas. (CCH)": {
                     "end": null,
+                    "patterns": [
+                        "$volume_with_suffix $reporter $page_with_commas"
+                    ],
                     "start": "1914-01-01T00:00:00"
                 }
             },
@@ -14056,6 +14122,9 @@
             "editions": {
                 "U.S. Tax Cas. (CCH)": {
                     "end": null,
+                    "patterns": [
+                        "$volume_with_suffix $reporter $page_with_commas"
+                    ],
                     "start": "1900-01-01T00:00:00"
                 }
             },
@@ -14089,7 +14158,6 @@
                 "us:c;tax.court"
             ],
             "name": "United States (US) Tax Cases Lexis",
-            "regexes": [],
             "variations": {}
         }
     ],
@@ -14196,6 +14264,9 @@
             "editions": {
                 "Unemployment Ins. Rep.": {
                     "end": null,
+                    "patterns": [
+                        "$paragraph_cite_with_suffix"
+                    ],
                     "start": "1750-01-01T00:00:00"
                 }
             },

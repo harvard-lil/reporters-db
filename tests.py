@@ -246,31 +246,35 @@ class ConstantsTest(TestCase):
 
     def test_json_format(self):
         """Does format of reporters.json match json.dumps(json.loads(), sort_keys=True)? """
-        json_path = (
-            Path(__file__).parent / "reporters_db" / "data" / "reporters.json"
-        )
-        json_str = json_path.read_text()
-        reformatted = json.dumps(
-            json.loads(json_str),
-            indent=4,
-            ensure_ascii=False,
-            sort_keys=True,
-        )
-        reformatted += "\n"
-        if json_str != reformatted:
-            if os.environ.get("FIX_JSON"):
-                json_path.write_text(reformatted)
-            else:
-                diff = context_diff(
-                    json_str.splitlines(),
-                    reformatted.splitlines(),
-                    fromfile="reporters.json",
-                    tofile="expected.json",
+        for file_name in ("reporters.json", "variables.json"):
+            with self.subTest(file_name=file_name):
+                json_path = (
+                    Path(__file__).parent / "reporters_db" / "data" / file_name
                 )
-                self.fail(
-                    "reporters.json needs reformatting. Run with env var FIX_JSON=1 to update the file automatically. Diff of actual vs. expected:\n"
-                    + "\n".join(diff)
+                json_str = json_path.read_text()
+                reformatted = json.dumps(
+                    json.loads(json_str),
+                    indent=4,
+                    ensure_ascii=False,
+                    sort_keys=True,
                 )
+                reformatted += "\n"
+                if json_str != reformatted:
+                    if os.environ.get("FIX_JSON"):
+                        json_path.write_text(reformatted)
+                    else:
+                        diff = context_diff(
+                            json_str.splitlines(),
+                            reformatted.splitlines(),
+                            fromfile="reporters.json",
+                            tofile="expected.json",
+                        )
+                        self.fail(
+                            ("%s needs reformatting. " % file_name)
+                            + "Run with env var FIX_JSON=1 to update the file automatically. "
+                            + "Diff of actual vs. expected:\n"
+                            + "\n".join(diff)
+                        )
 
 
 if __name__ == "__main__":

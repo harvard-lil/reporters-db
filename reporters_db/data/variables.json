@@ -1,0 +1,18 @@
+{
+    "format_neutral": "$year_as_volume-$reporter-$page",
+    "louisiana": "(?P<volume>\\d{2,4})[- ](?P<page>\\d{2,5}[A-Z]?) \\($reporter (?P<date_filed>\\d{1,2}\\/\\d{1,2}\\/\\d{2,4})\\)",
+    "new_mexico": "$year_as_volume-$reporter-$page_3_4",
+    "page": "(?P<page>\\d+)",
+    "page_3_4": "(?P<page>\\d{3,4})",
+    "page_with_commas": "(?P<page>\\d(?:[\\d,]*\\d)?)",
+    "page_with_commas_and_suffix": "(?P<page>\\d(?:[\\d,]*\\d)?[A-Z]?)",
+    "paragraph_cite": "$reporter $paragraph_marker_optional$page_with_commas",
+    "paragraph_cite_with_suffix": "$reporter $paragraph_marker_optional$page_with_commas_and_suffix",
+    "paragraph_marker_optional": "(?:[P¶] ?)?",
+    "reporter": "(?P<reporter>$edition)",
+    "reporter_year_page": "$reporter $year_as_volume-$page",
+    "single_volume_reporter": "$reporter $page",
+    "volume": "(?P<volume>\\d+)",
+    "volume_with_suffix": "(?P<volume>\\d{1,4}(?:-\\d+)?)",
+    "year_as_volume": "(?P<volume>19\\d{2}|20\\d{2})"
+}
